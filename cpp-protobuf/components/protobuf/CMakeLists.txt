@@ -1,4 +1,5 @@
-idf_component_register(SRCS "src/google/protobuf/any_lite.cc"
+idf_component_register(SRCS "src/google/protobuf/any.cc"
+                            "src/google/protobuf/any_lite.cc"
                             "src/google/protobuf/any.pb.cc"
                             "src/google/protobuf/api.pb.cc"
                             "src/google/protobuf/arena.cc"
