@@ -49,12 +49,6 @@ idf_component_register(SRCS "src/google/protobuf/any_lite.cc"
                             "src/google/protobuf/io/tokenizer.cc"
                             "src/google/protobuf/io/zero_copy_stream.cc"
                             "src/google/protobuf/io/zero_copy_stream_impl_lite.cc"
-                    INCLUDE_DIRS "src"
-                    REQUIRES pthread)
+                    INCLUDE_DIRS "src")
 
-set_target_properties(${COMPONENT_LIB} PROPERTIES COMPILE_FLAGS "-Wno-maybe-uninitialized -DHAVE_PTHREAD")
-
-set_source_files_properties("src/google/protobuf/arena.cc"
-    PROPERTIES COMPILE_FLAGS
-    -Wno-missing-field-initializers
-)
+set_target_properties(${COMPONENT_LIB} PROPERTIES COMPILE_FLAGS "-Wno-maybe-uninitialized")
