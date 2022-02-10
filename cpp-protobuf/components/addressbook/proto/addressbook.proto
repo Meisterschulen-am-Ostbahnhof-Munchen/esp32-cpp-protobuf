@@ -10,6 +10,9 @@
 syntax = "proto3";
 package tutorial;
 
+option optimize_for = LITE_RUNTIME;
+option cc_enable_arenas = false;
+
 import "google/protobuf/timestamp.proto";
 // [END declaration]
 
