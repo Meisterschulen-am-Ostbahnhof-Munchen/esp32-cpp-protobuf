@@ -50,7 +50,6 @@ Thumbs.db
 
 build/
 sdkconfig.old
-sdkconfig
 *.zip
 logs/*
 
