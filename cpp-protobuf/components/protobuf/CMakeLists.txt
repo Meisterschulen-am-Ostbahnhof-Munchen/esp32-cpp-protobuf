@@ -1,4 +1,5 @@
-idf_component_register(SRCS "src/google/protobuf/any_lite.cc"
+idf_component_register(SRCS "src/google/protobuf/any.cc"
+                            "src/google/protobuf/any_lite.cc"
                             "src/google/protobuf/any.pb.cc"
                             "src/google/protobuf/api.pb.cc"
                             "src/google/protobuf/arena.cc"
@@ -19,6 +20,7 @@ idf_component_register(SRCS "src/google/protobuf/any_lite.cc"
                             "src/google/protobuf/implicit_weak_message.cc"
                             "src/google/protobuf/map.cc"
                             "src/google/protobuf/map_field.cc"
+                            "src/google/protobuf/message.cc"
                             "src/google/protobuf/message_lite.cc"
                             "src/google/protobuf/parse_context.cc"
                             "src/google/protobuf/reflection_ops.cc"
@@ -30,8 +32,10 @@ idf_component_register(SRCS "src/google/protobuf/any_lite.cc"
                             "src/google/protobuf/timestamp.pb.cc"
                             "src/google/protobuf/type.pb.cc"
                             "src/google/protobuf/unknown_field_set.cc"
+                            "src/google/protobuf/wire_format.cc"
                             "src/google/protobuf/wire_format_lite.cc"
                             "src/google/protobuf/wrappers.pb.cc"
+                            "src/google/protobuf/repeated_ptr_field.cc"
                             "src/google/protobuf/stubs/common.cc"
                             "src/google/protobuf/stubs/int128.cc"
                             "src/google/protobuf/stubs/status.cc"
@@ -49,12 +53,6 @@ idf_component_register(SRCS "src/google/protobuf/any_lite.cc"
                             "src/google/protobuf/io/tokenizer.cc"
                             "src/google/protobuf/io/zero_copy_stream.cc"
                             "src/google/protobuf/io/zero_copy_stream_impl_lite.cc"
-                    INCLUDE_DIRS "src"
-                    REQUIRES pthread)
+                    INCLUDE_DIRS "src")
 
-set_target_properties(${COMPONENT_LIB} PROPERTIES COMPILE_FLAGS "-Wno-maybe-uninitialized -DHAVE_PTHREAD")
-
-set_source_files_properties("src/google/protobuf/arena.cc"
-    PROPERTIES COMPILE_FLAGS
-    -Wno-missing-field-initializers
-)
+set_target_properties(${COMPONENT_LIB} PROPERTIES COMPILE_FLAGS "-Wno-maybe-uninitialized")
