@@ -26,12 +26,10 @@
 #include <google/protobuf/generated_message_table_driven.h>
 #include <google/protobuf/generated_message_util.h>
 #include <google/protobuf/metadata_lite.h>
-#include <google/protobuf/generated_message_reflection.h>
-#include <google/protobuf/message.h>
+#include <google/protobuf/message_lite.h>
 #include <google/protobuf/repeated_field.h>  // IWYU pragma: export
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
-#include <google/protobuf/generated_enum_reflection.h>
-#include <google/protobuf/unknown_field_set.h>
+#include <google/protobuf/generated_enum_util.h>
 #include <google/protobuf/timestamp.pb.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
@@ -54,7 +52,6 @@ struct TableStruct_addressbook_2eproto {
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
   static const uint32_t offsets[];
 };
-extern const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_addressbook_2eproto;
 namespace tutorial {
 class AddressBook;
 struct AddressBookDefaultTypeInternal;
@@ -85,24 +82,20 @@ constexpr Person_PhoneType Person_PhoneType_PhoneType_MIN = Person_PhoneType_MOB
 constexpr Person_PhoneType Person_PhoneType_PhoneType_MAX = Person_PhoneType_WORK;
 constexpr int Person_PhoneType_PhoneType_ARRAYSIZE = Person_PhoneType_PhoneType_MAX + 1;
 
-const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* Person_PhoneType_descriptor();
+const std::string& Person_PhoneType_Name(Person_PhoneType value);
 template<typename T>
 inline const std::string& Person_PhoneType_Name(T enum_t_value) {
   static_assert(::std::is_same<T, Person_PhoneType>::value ||
     ::std::is_integral<T>::value,
     "Incorrect type passed to function Person_PhoneType_Name.");
-  return ::PROTOBUF_NAMESPACE_ID::internal::NameOfEnum(
-    Person_PhoneType_descriptor(), enum_t_value);
+  return Person_PhoneType_Name(static_cast<Person_PhoneType>(enum_t_value));
 }
-inline bool Person_PhoneType_Parse(
-    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, Person_PhoneType* value) {
-  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<Person_PhoneType>(
-    Person_PhoneType_descriptor(), name, value);
-}
+bool Person_PhoneType_Parse(
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, Person_PhoneType* value);
 // ===================================================================
 
 class Person_PhoneNumber final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:tutorial.Person.PhoneNumber) */ {
+    public ::PROTOBUF_NAMESPACE_ID::MessageLite /* @@protoc_insertion_point(class_definition:tutorial.Person.PhoneNumber) */ {
  public:
   inline Person_PhoneNumber() : Person_PhoneNumber(nullptr) {}
   ~Person_PhoneNumber() override;
@@ -132,15 +125,6 @@ class Person_PhoneNumber final :
     return *this;
   }
 
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
   static const Person_PhoneNumber& default_instance() {
     return *internal_default_instance();
   }
@@ -178,13 +162,9 @@ class Person_PhoneNumber final :
   Person_PhoneNumber* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
     return CreateMaybeMessage<Person_PhoneNumber>(arena);
   }
-  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CheckTypeAndMergeFrom(const ::PROTOBUF_NAMESPACE_ID::MessageLite& from)  final;
   void CopyFrom(const Person_PhoneNumber& from);
-  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
   void MergeFrom(const Person_PhoneNumber& from);
-  private:
-  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
-  public:
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
@@ -197,7 +177,7 @@ class Person_PhoneNumber final :
   private:
   void SharedCtor();
   void SharedDtor();
-  void SetCachedSize(int size) const final;
+  void SetCachedSize(int size) const;
   void InternalSwap(Person_PhoneNumber* other);
 
   private:
@@ -213,10 +193,7 @@ class Person_PhoneNumber final :
   inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
   public:
 
-  static const ClassData _class_data_;
-  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
-
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  std::string GetTypeName() const final;
 
   // nested types ----------------------------------------------------
 
@@ -264,7 +241,7 @@ class Person_PhoneNumber final :
 // -------------------------------------------------------------------
 
 class Person final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:tutorial.Person) */ {
+    public ::PROTOBUF_NAMESPACE_ID::MessageLite /* @@protoc_insertion_point(class_definition:tutorial.Person) */ {
  public:
   inline Person() : Person(nullptr) {}
   ~Person() override;
@@ -294,15 +271,6 @@ class Person final :
     return *this;
   }
 
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
   static const Person& default_instance() {
     return *internal_default_instance();
   }
@@ -340,13 +308,9 @@ class Person final :
   Person* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
     return CreateMaybeMessage<Person>(arena);
   }
-  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CheckTypeAndMergeFrom(const ::PROTOBUF_NAMESPACE_ID::MessageLite& from)  final;
   void CopyFrom(const Person& from);
-  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
   void MergeFrom(const Person& from);
-  private:
-  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
-  public:
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
@@ -359,7 +323,7 @@ class Person final :
   private:
   void SharedCtor();
   void SharedDtor();
-  void SetCachedSize(int size) const final;
+  void SetCachedSize(int size) const;
   void InternalSwap(Person* other);
 
   private:
@@ -375,10 +339,7 @@ class Person final :
   inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
   public:
 
-  static const ClassData _class_data_;
-  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
-
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  std::string GetTypeName() const final;
 
   // nested types ----------------------------------------------------
 
@@ -400,10 +361,6 @@ class Person final :
     Person_PhoneType_PhoneType_MAX;
   static constexpr int PhoneType_ARRAYSIZE =
     Person_PhoneType_PhoneType_ARRAYSIZE;
-  static inline const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor*
-  PhoneType_descriptor() {
-    return Person_PhoneType_descriptor();
-  }
   template<typename T>
   static inline const std::string& PhoneType_Name(T enum_t_value) {
     static_assert(::std::is_same<T, PhoneType>::value ||
@@ -516,7 +473,7 @@ class Person final :
 // -------------------------------------------------------------------
 
 class AddressBook final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:tutorial.AddressBook) */ {
+    public ::PROTOBUF_NAMESPACE_ID::MessageLite /* @@protoc_insertion_point(class_definition:tutorial.AddressBook) */ {
  public:
   inline AddressBook() : AddressBook(nullptr) {}
   ~AddressBook() override;
@@ -546,15 +503,6 @@ class AddressBook final :
     return *this;
   }
 
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
   static const AddressBook& default_instance() {
     return *internal_default_instance();
   }
@@ -592,13 +540,9 @@ class AddressBook final :
   AddressBook* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
     return CreateMaybeMessage<AddressBook>(arena);
   }
-  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CheckTypeAndMergeFrom(const ::PROTOBUF_NAMESPACE_ID::MessageLite& from)  final;
   void CopyFrom(const AddressBook& from);
-  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
   void MergeFrom(const AddressBook& from);
-  private:
-  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
-  public:
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
@@ -611,7 +555,7 @@ class AddressBook final :
   private:
   void SharedCtor();
   void SharedDtor();
-  void SetCachedSize(int size) const final;
+  void SetCachedSize(int size) const;
   void InternalSwap(AddressBook* other);
 
   private:
@@ -627,10 +571,7 @@ class AddressBook final :
   inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
   public:
 
-  static const ClassData _class_data_;
-  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
-
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  std::string GetTypeName() const final;
 
   // nested types ----------------------------------------------------
 
@@ -1061,10 +1002,6 @@ AddressBook::people() const {
 PROTOBUF_NAMESPACE_OPEN
 
 template <> struct is_proto_enum< ::tutorial::Person_PhoneType> : ::std::true_type {};
-template <>
-inline const EnumDescriptor* GetEnumDescriptor< ::tutorial::Person_PhoneType>() {
-  return ::tutorial::Person_PhoneType_descriptor();
-}
 
 PROTOBUF_NAMESPACE_CLOSE
 

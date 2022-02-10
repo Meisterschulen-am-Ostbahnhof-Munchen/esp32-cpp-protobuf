@@ -8,10 +8,7 @@
 #include <google/protobuf/io/coded_stream.h>
 #include <google/protobuf/extension_set.h>
 #include <google/protobuf/wire_format_lite.h>
-#include <google/protobuf/descriptor.h>
-#include <google/protobuf/generated_message_reflection.h>
-#include <google/protobuf/reflection_ops.h>
-#include <google/protobuf/wire_format.h>
+#include <google/protobuf/io/zero_copy_stream_impl_lite.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 
@@ -60,87 +57,7 @@ struct AddressBookDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT AddressBookDefaultTypeInternal _AddressBook_default_instance_;
 }  // namespace tutorial
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_addressbook_2eproto[3];
-static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_addressbook_2eproto[1];
-static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_addressbook_2eproto = nullptr;
-
-const uint32_t TableStruct_addressbook_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::tutorial::Person_PhoneNumber, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::tutorial::Person_PhoneNumber, number_),
-  PROTOBUF_FIELD_OFFSET(::tutorial::Person_PhoneNumber, type_),
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::tutorial::Person, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::tutorial::Person, name_),
-  PROTOBUF_FIELD_OFFSET(::tutorial::Person, id_),
-  PROTOBUF_FIELD_OFFSET(::tutorial::Person, email_),
-  PROTOBUF_FIELD_OFFSET(::tutorial::Person, phones_),
-  PROTOBUF_FIELD_OFFSET(::tutorial::Person, last_updated_),
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::tutorial::AddressBook, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::tutorial::AddressBook, people_),
-};
-static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, -1, -1, sizeof(::tutorial::Person_PhoneNumber)},
-  { 8, -1, -1, sizeof(::tutorial::Person)},
-  { 19, -1, -1, sizeof(::tutorial::AddressBook)},
-};
-
-static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::tutorial::_Person_PhoneNumber_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::tutorial::_Person_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::tutorial::_AddressBook_default_instance_),
-};
-
-const char descriptor_table_protodef_addressbook_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
-  "\n\021addressbook.proto\022\010tutorial\032\037google/pr"
-  "otobuf/timestamp.proto\"\207\002\n\006Person\022\014\n\004nam"
-  "e\030\001 \001(\t\022\n\n\002id\030\002 \001(\005\022\r\n\005email\030\003 \001(\t\022,\n\006ph"
-  "ones\030\004 \003(\0132\034.tutorial.Person.PhoneNumber"
-  "\0220\n\014last_updated\030\005 \001(\0132\032.google.protobuf"
-  ".Timestamp\032G\n\013PhoneNumber\022\016\n\006number\030\001 \001("
-  "\t\022(\n\004type\030\002 \001(\0162\032.tutorial.Person.PhoneT"
-  "ype\"+\n\tPhoneType\022\n\n\006MOBILE\020\000\022\010\n\004HOME\020\001\022\010"
-  "\n\004WORK\020\002\"/\n\013AddressBook\022 \n\006people\030\001 \003(\0132"
-  "\020.tutorial.PersonB\225\001\n\033com.example.tutori"
-  "al.protosB\021AddressBookProtosP\001Z:github.c"
-  "om/protocolbuffers/protobuf/examples/go/"
-  "tutorialpb\252\002$Google.Protobuf.Examples.Ad"
-  "dressBookb\006proto3"
-  ;
-static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_addressbook_2eproto_deps[1] = {
-  &::descriptor_table_google_2fprotobuf_2ftimestamp_2eproto,
-};
-static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_addressbook_2eproto_once;
-const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_addressbook_2eproto = {
-  false, false, 537, descriptor_table_protodef_addressbook_2eproto, "addressbook.proto", 
-  &descriptor_table_addressbook_2eproto_once, descriptor_table_addressbook_2eproto_deps, 1, 3,
-  schemas, file_default_instances, TableStruct_addressbook_2eproto::offsets,
-  file_level_metadata_addressbook_2eproto, file_level_enum_descriptors_addressbook_2eproto, file_level_service_descriptors_addressbook_2eproto,
-};
-PROTOBUF_ATTRIBUTE_WEAK const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable* descriptor_table_addressbook_2eproto_getter() {
-  return &descriptor_table_addressbook_2eproto;
-}
-
-// Force running AddDescriptors() at dynamic initialization time.
-PROTOBUF_ATTRIBUTE_INIT_PRIORITY static ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptorsRunner dynamic_init_dummy_addressbook_2eproto(&descriptor_table_addressbook_2eproto);
 namespace tutorial {
-const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* Person_PhoneType_descriptor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_addressbook_2eproto);
-  return file_level_enum_descriptors_addressbook_2eproto[0];
-}
 bool Person_PhoneType_IsValid(int value) {
   switch (value) {
     case 0:
@@ -152,6 +69,50 @@ bool Person_PhoneType_IsValid(int value) {
   }
 }
 
+static ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<std::string> Person_PhoneType_strings[3] = {};
+
+static const char Person_PhoneType_names[] =
+  "HOME"
+  "MOBILE"
+  "WORK";
+
+static const ::PROTOBUF_NAMESPACE_ID::internal::EnumEntry Person_PhoneType_entries[] = {
+  { {Person_PhoneType_names + 0, 4}, 1 },
+  { {Person_PhoneType_names + 4, 6}, 0 },
+  { {Person_PhoneType_names + 10, 4}, 2 },
+};
+
+static const int Person_PhoneType_entries_by_number[] = {
+  1, // 0 -> MOBILE
+  0, // 1 -> HOME
+  2, // 2 -> WORK
+};
+
+const std::string& Person_PhoneType_Name(
+    Person_PhoneType value) {
+  static const bool dummy =
+      ::PROTOBUF_NAMESPACE_ID::internal::InitializeEnumStrings(
+          Person_PhoneType_entries,
+          Person_PhoneType_entries_by_number,
+          3, Person_PhoneType_strings);
+  (void) dummy;
+  int idx = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumName(
+      Person_PhoneType_entries,
+      Person_PhoneType_entries_by_number,
+      3, value);
+  return idx == -1 ? ::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString() :
+                     Person_PhoneType_strings[idx].get();
+}
+bool Person_PhoneType_Parse(
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, Person_PhoneType* value) {
+  int int_value;
+  bool success = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumValue(
+      Person_PhoneType_entries, 3, name, &int_value);
+  if (success) {
+    *value = static_cast<Person_PhoneType>(int_value);
+  }
+  return success;
+}
 #if (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 constexpr Person_PhoneType Person::MOBILE;
 constexpr Person_PhoneType Person::HOME;
@@ -169,7 +130,7 @@ class Person_PhoneNumber::_Internal {
 
 Person_PhoneNumber::Person_PhoneNumber(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
   if (!is_message_owned) {
     RegisterArenaDtor(arena);
@@ -177,8 +138,8 @@ Person_PhoneNumber::Person_PhoneNumber(::PROTOBUF_NAMESPACE_ID::Arena* arena,
   // @@protoc_insertion_point(arena_constructor:tutorial.Person.PhoneNumber)
 }
 Person_PhoneNumber::Person_PhoneNumber(const Person_PhoneNumber& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite() {
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   number_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
     number_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
@@ -203,7 +164,7 @@ Person_PhoneNumber::~Person_PhoneNumber() {
   // @@protoc_insertion_point(destructor:tutorial.Person.PhoneNumber)
   if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  _internal_metadata_.Delete<std::string>();
 }
 
 inline void Person_PhoneNumber::SharedDtor() {
@@ -229,7 +190,7 @@ void Person_PhoneNumber::Clear() {
 
   number_.ClearToEmpty();
   type_ = 0;
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* Person_PhoneNumber::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
@@ -243,7 +204,7 @@ const char* Person_PhoneNumber::_InternalParse(const char* ptr, ::PROTOBUF_NAMES
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_number();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "tutorial.Person.PhoneNumber.number"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, nullptr));
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -268,7 +229,7 @@ const char* Person_PhoneNumber::_InternalParse(const char* ptr, ::PROTOBUF_NAMES
     }
     ptr = UnknownFieldParse(
         tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
         ptr, ctx);
     CHK_(ptr != nullptr);
   }  // while
@@ -304,8 +265,8 @@ uint8_t* Person_PhoneNumber::_InternalSerialize(
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:tutorial.Person.PhoneNumber)
   return target;
@@ -332,21 +293,19 @@ size_t Person_PhoneNumber::ByteSizeLong() const {
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_type());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData Person_PhoneNumber::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    Person_PhoneNumber::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Person_PhoneNumber::GetClassData() const { return &_class_data_; }
-
-void Person_PhoneNumber::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<Person_PhoneNumber *>(to)->MergeFrom(
-      static_cast<const Person_PhoneNumber &>(from));
+void Person_PhoneNumber::CheckTypeAndMergeFrom(
+    const ::PROTOBUF_NAMESPACE_ID::MessageLite& from) {
+  MergeFrom(*::PROTOBUF_NAMESPACE_ID::internal::DownCast<const Person_PhoneNumber*>(
+      &from));
 }
-
 
 void Person_PhoneNumber::MergeFrom(const Person_PhoneNumber& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:tutorial.Person.PhoneNumber)
@@ -360,7 +319,7 @@ void Person_PhoneNumber::MergeFrom(const Person_PhoneNumber& from) {
   if (from._internal_type() != 0) {
     _internal_set_type(from._internal_type());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void Person_PhoneNumber::CopyFrom(const Person_PhoneNumber& from) {
@@ -387,11 +346,10 @@ void Person_PhoneNumber::InternalSwap(Person_PhoneNumber* other) {
   swap(type_, other->type_);
 }
 
-::PROTOBUF_NAMESPACE_ID::Metadata Person_PhoneNumber::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
-      &descriptor_table_addressbook_2eproto_getter, &descriptor_table_addressbook_2eproto_once,
-      file_level_metadata_addressbook_2eproto[0]);
+std::string Person_PhoneNumber::GetTypeName() const {
+  return "tutorial.Person.PhoneNumber";
 }
+
 
 // ===================================================================
 
@@ -412,7 +370,7 @@ void Person::clear_last_updated() {
 }
 Person::Person(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned),
   phones_(arena) {
   SharedCtor();
   if (!is_message_owned) {
@@ -421,9 +379,9 @@ Person::Person(::PROTOBUF_NAMESPACE_ID::Arena* arena,
   // @@protoc_insertion_point(arena_constructor:tutorial.Person)
 }
 Person::Person(const Person& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
       phones_(from.phones_) {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
     name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
@@ -468,7 +426,7 @@ Person::~Person() {
   // @@protoc_insertion_point(destructor:tutorial.Person)
   if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  _internal_metadata_.Delete<std::string>();
 }
 
 inline void Person::SharedDtor() {
@@ -502,7 +460,7 @@ void Person::Clear() {
   }
   last_updated_ = nullptr;
   id_ = 0;
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* Person::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
@@ -516,7 +474,7 @@ const char* Person::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::int
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_name();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "tutorial.Person.name"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, nullptr));
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -534,7 +492,7 @@ const char* Person::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::int
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           auto str = _internal_mutable_email();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "tutorial.Person.email"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, nullptr));
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -571,7 +529,7 @@ const char* Person::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::int
     }
     ptr = UnknownFieldParse(
         tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
         ptr, ctx);
     CHK_(ptr != nullptr);
   }  // while
@@ -632,8 +590,8 @@ uint8_t* Person::_InternalSerialize(
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:tutorial.Person)
   return target;
@@ -680,21 +638,19 @@ size_t Person::ByteSizeLong() const {
     total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_id());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData Person::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    Person::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Person::GetClassData() const { return &_class_data_; }
-
-void Person::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<Person *>(to)->MergeFrom(
-      static_cast<const Person &>(from));
+void Person::CheckTypeAndMergeFrom(
+    const ::PROTOBUF_NAMESPACE_ID::MessageLite& from) {
+  MergeFrom(*::PROTOBUF_NAMESPACE_ID::internal::DownCast<const Person*>(
+      &from));
 }
-
 
 void Person::MergeFrom(const Person& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:tutorial.Person)
@@ -715,7 +671,7 @@ void Person::MergeFrom(const Person& from) {
   if (from._internal_id() != 0) {
     _internal_set_id(from._internal_id());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void Person::CopyFrom(const Person& from) {
@@ -753,11 +709,10 @@ void Person::InternalSwap(Person* other) {
           reinterpret_cast<char*>(&other->last_updated_));
 }
 
-::PROTOBUF_NAMESPACE_ID::Metadata Person::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
-      &descriptor_table_addressbook_2eproto_getter, &descriptor_table_addressbook_2eproto_once,
-      file_level_metadata_addressbook_2eproto[1]);
+std::string Person::GetTypeName() const {
+  return "tutorial.Person";
 }
+
 
 // ===================================================================
 
@@ -767,7 +722,7 @@ class AddressBook::_Internal {
 
 AddressBook::AddressBook(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned),
   people_(arena) {
   SharedCtor();
   if (!is_message_owned) {
@@ -776,9 +731,9 @@ AddressBook::AddressBook(::PROTOBUF_NAMESPACE_ID::Arena* arena,
   // @@protoc_insertion_point(arena_constructor:tutorial.AddressBook)
 }
 AddressBook::AddressBook(const AddressBook& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
       people_(from.people_) {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:tutorial.AddressBook)
 }
 
@@ -789,7 +744,7 @@ AddressBook::~AddressBook() {
   // @@protoc_insertion_point(destructor:tutorial.AddressBook)
   if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  _internal_metadata_.Delete<std::string>();
 }
 
 inline void AddressBook::SharedDtor() {
@@ -813,7 +768,7 @@ void AddressBook::Clear() {
   (void) cached_has_bits;
 
   people_.Clear();
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* AddressBook::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
@@ -846,7 +801,7 @@ const char* AddressBook::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
     }
     ptr = UnknownFieldParse(
         tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
         ptr, ctx);
     CHK_(ptr != nullptr);
   }  // while
@@ -873,8 +828,8 @@ uint8_t* AddressBook::_InternalSerialize(
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:tutorial.AddressBook)
   return target;
@@ -895,21 +850,19 @@ size_t AddressBook::ByteSizeLong() const {
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData AddressBook::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    AddressBook::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*AddressBook::GetClassData() const { return &_class_data_; }
-
-void AddressBook::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<AddressBook *>(to)->MergeFrom(
-      static_cast<const AddressBook &>(from));
+void AddressBook::CheckTypeAndMergeFrom(
+    const ::PROTOBUF_NAMESPACE_ID::MessageLite& from) {
+  MergeFrom(*::PROTOBUF_NAMESPACE_ID::internal::DownCast<const AddressBook*>(
+      &from));
 }
-
 
 void AddressBook::MergeFrom(const AddressBook& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:tutorial.AddressBook)
@@ -918,7 +871,7 @@ void AddressBook::MergeFrom(const AddressBook& from) {
   (void) cached_has_bits;
 
   people_.MergeFrom(from.people_);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void AddressBook::CopyFrom(const AddressBook& from) {
@@ -938,11 +891,10 @@ void AddressBook::InternalSwap(AddressBook* other) {
   people_.InternalSwap(&other->people_);
 }
 
-::PROTOBUF_NAMESPACE_ID::Metadata AddressBook::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
-      &descriptor_table_addressbook_2eproto_getter, &descriptor_table_addressbook_2eproto_once,
-      file_level_metadata_addressbook_2eproto[2]);
+std::string AddressBook::GetTypeName() const {
+  return "tutorial.AddressBook";
 }
+
 
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace tutorial
