@@ -1,0 +1,16 @@
+# File `main/linker.lf`
+# Create a section protodesc_section which references any C/C++ section starting with "protodesc_cold"
+[sections:protodesc_section]
+entries:
+    protodesc_cold+
+
+# Define a scheme, named main_scheme (you can name it how you want) to specify where you want protodesc_section to be. I guess it should be in flash read-only data, let's put it there.
+[scheme:main_scheme]
+entries:
+    protodesc_section -> flash_rodata
+
+# Finally, specify that the previous scheme applies for all archives/components of our project
+[mapping:main_default]
+archive: *
+entries:
+    * (main_scheme)
